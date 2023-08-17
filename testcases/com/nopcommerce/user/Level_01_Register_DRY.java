@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class User_01_Register {
+public class Level_01_Register_DRY {
 	WebDriver driver;
 	String emailAddress;
 	String projectPath = System.getProperty("user.dir");
@@ -60,19 +60,36 @@ public class User_01_Register {
 	}
 
 	@Test
-	public void TC_03_Register_Success() {
+	/*
+	 * public void TC_03_Register_Success() {
+	 * driver.findElement(By.cssSelector("a.ico-register")).click();
+	 * 
+	 * driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
+	 * driver.findElement(By.cssSelector("input#LastName")).sendKeys("FC");
+	 * driver.findElement(By.cssSelector("input#Email")).sendKeys(emailAddress);
+	 * driver.findElement(By.cssSelector("input#Password")).sendKeys("123456");
+	 * driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("123456"
+	 * );
+	 * 
+	 * driver.findElement(By.cssSelector("button#register-button")).click();
+	 * Assert.assertEquals(driver.findElement(By.cssSelector("div.result")).getText(
+	 * ), "Your registration completed");
+	 * driver.findElement(By.cssSelector("a.ico-logout")).click();
+	 */
+	public void TC_03_Register_Invalid_Success() {
 		driver.findElement(By.cssSelector("a.ico-register")).click();
 
-		driver.findElement(By.cssSelector("input#FirstName")).sendKeys("Automation");
+		driver.findElement(By.cssSelector("input#FirstName")).sendKeys("automation");
 		driver.findElement(By.cssSelector("input#LastName")).sendKeys("FC");
 		driver.findElement(By.cssSelector("input#Email")).sendKeys(emailAddress);
 		driver.findElement(By.cssSelector("input#Password")).sendKeys("123456");
 		driver.findElement(By.cssSelector("input#ConfirmPassword")).sendKeys("123456");
 
 		driver.findElement(By.cssSelector("button#register-button")).click();
-		Assert.assertEquals(driver.findElement(By.cssSelector("div.result")).getText(), "Your registration completed");
-		driver.findElement(By.cssSelector("a.ico-logout")).click();
 
+		Assert.assertEquals(driver.findElement(By.cssSelector("div.result")).getText(), "Your registration completed");
+
+		driver.findElement(By.cssSelector("a.ico-login")).click();
 	}
 
 	@Test
