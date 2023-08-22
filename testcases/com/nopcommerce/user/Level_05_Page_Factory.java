@@ -1,19 +1,15 @@
 package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
-
-import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageFactory.HomePageObject;
+import pageFactory.LoginPageObject;
+import pageFactory.RegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
