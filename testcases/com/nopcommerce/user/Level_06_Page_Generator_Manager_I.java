@@ -1,22 +1,26 @@
 package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
+
+import commons.BasePage;
 import commons.BaseTest;
-import pageFactory.nopcommerce.HomePageObject;
-import pageFactory.nopcommerce.LoginPageObject;
-import pageFactory.nopcommerce.RegisterPageObject;
+import pageObjects.nopcommerce.HomePageObject;
+import pageObjects.nopcommerce.LoginPageObject;
+import pageObjects.nopcommerce.RegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_05_Page_Factory extends BaseTest {
+public class Level_06_Page_Generator_Manager_I extends BaseTest {
 	private WebDriver driver;
 	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, validpassword, incorrectPassword;
 	private HomePageObject homePage;
@@ -28,6 +32,8 @@ public class Level_05_Page_Factory extends BaseTest {
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
+
+		// 1
 		homePage = new HomePageObject(driver);
 
 		firstName = "Automation";
@@ -40,6 +46,8 @@ public class Level_05_Page_Factory extends BaseTest {
 
 		System.out.println("Pre-Condition -Step 01 : Click to Register link ");
 		homePage.clickToRegisterLink();
+
+		// 2
 		registerPage = new RegisterPageObject(driver);
 
 		System.out.println("Pre-Condition -Step 02 : Input to required fields ");
@@ -58,6 +66,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		System.out.println("Pre-Condition -Step 05 : Click to Logout link ");
 		registerPage.clickToLoginLink();
 
+		// 3
 		homePage = new HomePageObject(driver);
 	}
 
@@ -67,6 +76,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 4
 		loginPage = new LoginPageObject(driver);
 		System.out.println("Login_01_Empty_Data -Step 02 : Click to Login  button ");
 
@@ -79,6 +89,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 5
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.inputToEmailTextbox(invalidEmail);
@@ -93,6 +104,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 6
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.inputToEmailTextbox(notFoundEmail);
@@ -107,6 +119,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 7
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -123,6 +136,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 8
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -139,6 +153,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		homePage.clickToLoginLink();
 
 		// từ trang Home -> Click login Link -> qua trang Login
+		// 9
 		loginPage = new LoginPageObject(driver);
 
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -146,6 +161,7 @@ public class Level_05_Page_Factory extends BaseTest {
 
 		loginPage.clickToLoginButton();
 		// login thành công -> HomePage
+		// 10
 		homePage = new HomePageObject(driver);
 
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
@@ -155,11 +171,6 @@ public class Level_05_Page_Factory extends BaseTest {
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
-	}
-
-	public int generateFakeNumber() {
-		Random rand = new Random();
-		return rand.nextInt(9999);
 	}
 
 }
