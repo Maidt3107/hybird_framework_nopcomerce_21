@@ -4,9 +4,9 @@ import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.RegisterPageObject;
+import pageObjects.nopCommerce.user.UserHomePageObject;
+import pageObjects.nopCommerce.user.UserLoginPageObject;
+import pageObjects.nopCommerce.user.UserRegisterPageObject;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -23,9 +23,9 @@ import org.testng.annotations.AfterClass;
 public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	private WebDriver driver;
 	private String firstName, lastName, invalidEmail, notFoundEmail, existingEmail, validpassword, incorrectPassword;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 	private String projectPath = System.getProperty("user.dir");
 
 	@Parameters("browser")
@@ -34,7 +34,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		driver = getBrowserDriver(browserName);
 
 		// 1
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 
 		firstName = "Automation";
 		lastName = "FC";
@@ -45,10 +45,10 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 		incorrectPassword = "654321";
 
 		System.out.println("Pre-Condition -Step 01 : Click to Register link ");
-		registerPage = homePage.clickToRegisterLink();
+		registerPage = homePage.openRegisterPage();
 
 		// 2
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 
 		System.out.println("Pre-Condition -Step 02 : Input to required fields ");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -71,7 +71,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 	@Test
 	public void Login_01_Empty_Data() {
 		System.out.println("Login_01_Empty_Data -Step 01 : Click to Login  link ");
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		System.out.println("Login_01_Empty_Data -Step 02 : Click to Login  button ");
 		loginPage.clickToLoginButton();
@@ -80,7 +80,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_02_Invalid_Email() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		loginPage.inputToEmailTextbox(invalidEmail);
 		loginPage.clickToLoginButton();
@@ -89,7 +89,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_03_Email_Not_Found() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		loginPage.inputToEmailTextbox(notFoundEmail);
 		loginPage.clickToLoginButton();
@@ -99,7 +99,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_04_Existing_Email_Empty_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox("");
@@ -112,7 +112,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_05_Existing_Email_Incorrect_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(incorrectPassword);
@@ -124,7 +124,7 @@ public class Level_06_Page_Generator_Manager_II extends BaseTest {
 
 	@Test
 	public void Login_06_Valid_Email_Password() {
-		loginPage = homePage.clickToLoginLink();
+		loginPage = homePage.openLoginPage();
 
 		loginPage.inputToEmailTextbox(existingEmail);
 		loginPage.inputToPasswordTextbox(validpassword);

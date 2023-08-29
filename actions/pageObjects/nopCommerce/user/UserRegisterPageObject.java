@@ -1,13 +1,14 @@
-package pageObjects.nopcommerce;
+package pageObjects.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.nopcommerce.RegisterPageUI;
+import commons.PageGeneratorManager;
+import pageUIs.nopcommerce.user.RegisterPageUI;
 
-public class RegisterPageObject extends BasePage {
+public class UserRegisterPageObject extends BasePage {
 
-	public RegisterPageObject(WebDriver driver) {
+	public UserRegisterPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 
@@ -81,10 +82,10 @@ public class RegisterPageObject extends BasePage {
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
 	}
 
-	public HomePageObject clickToLoginLink() {
+	public UserHomePageObject clickToLoginLink() {
 		waitForElementClickable(driver, RegisterPageUI.LOGIN_LINK);
 		clickToElement(driver, RegisterPageUI.LOGIN_LINK);
-		return PageGeneratorManager.getHomePage(driver);
+		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
 	public String getErrorExistingEmailMessage() {
