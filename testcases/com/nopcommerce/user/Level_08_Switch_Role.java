@@ -34,7 +34,7 @@ public class Level_08_Switch_Role extends BaseTest {
 		driver = getBrowserDriver(browserName);
 		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 
-		userEmailAddress = "automationfc2908@gmail.com";
+		userEmailAddress = "automationfc3008@gmail.com";
 		userPassword = "123456";
 		adminEmailAddress = "admin@yourstore.com";
 		adminPassword = "admin";
