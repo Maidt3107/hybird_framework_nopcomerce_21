@@ -28,10 +28,10 @@ import org.testng.annotations.AfterClass;
 
 public class Level_08_Switch_Role extends BaseTest {
 
-	@Parameters("browser")
+	@Parameters({ "browser", "environmentName" })
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(String browserName, String environmentName) {
+		driver = getBrowserDriver(browserName, environmentName);
 		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 
 		userEmailAddress = "automationfc3008@gmail.com";

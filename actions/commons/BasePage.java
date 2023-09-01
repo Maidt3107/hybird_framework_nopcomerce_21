@@ -140,9 +140,6 @@ public class BasePage {
 		if (locatorType.startsWith("xpath=") || locatorType.startsWith("XPATH=") || locatorType.startsWith("Xpath=")
 				|| locatorType.startsWith("XPath=")) {
 			locatorType = String.format(locatorType, (Object[]) dynamicValues);
-			// locatorType
-			// ="xpath=//div[contains(@class,'account-navigation')]//a[text()='%s']","Customer
-			// info");
 		}
 		System.out.println("Locator Type After = " + locatorType);
 		return locatorType;
@@ -502,6 +499,6 @@ public class BasePage {
 
 	}
 
-	private long longTimeout = 30;
+	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 
 }
