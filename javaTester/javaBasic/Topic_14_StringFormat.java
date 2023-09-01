@@ -17,10 +17,10 @@ public class Topic_14_StringFormat {
 	// 1 locator có tới 3- 4-5 -6 tham só động thì sao?
 
 	public static void main(String[] args) {
-		clickToLink(CUSTOMER_INFOR_LINK);
-		clickToLink(ADDRESS_LINK);
-		clickToLink(MY_PRODUCT_REVIEW_LINK);
-		clickToLink(REWARD_POINT_LINK);
+		/*
+		 * clickToLink(CUSTOMER_INFOR_LINK); clickToLink(ADDRESS_LINK);
+		 * clickToLink(MY_PRODUCT_REVIEW_LINK); clickToLink(REWARD_POINT_LINK);
+		 */
 
 		clickToLink(DYNAMIC_SIDEBAR_LINK_BY_PAGE_NAME, "Customer info");
 		clickToLink(DYNAMIC_SIDEBAR_LINK_BY_PAGE_NAME, "Addresses");
@@ -37,21 +37,17 @@ public class Topic_14_StringFormat {
 	}
 
 	// 1 tham số động
-	/*
-	 * public static void clickToLink(String dynamicLocator, String pageName) {
-	 * String locator = String.format(dynamicLocator, pageName); // dynamicLocator =
-	 * //div[contains(@class,'account-navigation')]//a[text()='%s']
-	 * System.out.println("Click to: " + locator);
-	 * 
-	 * }
-	 */
+	public static void clickToLink(String dynamicLocator, String pageName) {
+		String locator = String.format(dynamicLocator, pageName); // dynamicLocator =
+		// div[contains(@class,'account-navigation')]//a[text()='%s']
+		System.out.println("Click to: " + locator);
+	}
 
 	// 2 tham số động
-	/*
-	 * public static void clickToLink(String dynamicLocator, String areaName, String
-	 * pageName) { String locator = String.format(dynamicLocator, areaName,
-	 * pageName); System.out.println("Click to: " + locator); }
-	 */
+	public static void clickToLink(String dynamicLocator, String areaName, String pageName) {
+		String locator = String.format(dynamicLocator, areaName, pageName);
+		System.out.println("Click to: " + locator);
+	}
 
 	// n tham số động
 	public static void clickToLink(String dynamicLocator, String... params) {
