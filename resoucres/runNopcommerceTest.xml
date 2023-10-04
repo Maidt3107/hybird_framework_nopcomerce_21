@@ -3,10 +3,10 @@
 
 <parameter name = "environmentName" value="DEV"/>
 
-  <test name="Run on  Chrome">
-  <parameter name = "browser" value="chrome"/>
+  <test name="Run on  Firefox ">
+  <parameter name = "browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/>
+      <class name="com.nopcommerce.user.Level_01_Register_DRY"/>
     </classes>
   </test> 
   

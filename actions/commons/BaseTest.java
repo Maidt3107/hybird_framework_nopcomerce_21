@@ -81,7 +81,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		if (browserName.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -141,13 +141,13 @@ public class BaseTest {
 		}
 
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.get(getEnvironmentUrl(environmentName));
+		driver.get(appUrl);
 		return driver;
 	}
 
-	private String getEnvironmentUrl(String environmentName) {
+	protected String getEnvironmentUrl(String serverName) {
 		String url = null;
-		switch (environmentName) {
+		switch (serverName) {
 		case "DEV":
 			url = GlobalConstants.PORTAL_DEV_URL;
 			break;
