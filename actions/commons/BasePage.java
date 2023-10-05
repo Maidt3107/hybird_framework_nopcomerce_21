@@ -166,7 +166,24 @@ public class BasePage {
 		locatorType = getDynamicXpath(locatorType, dynamicValues);
 		getWebElemet(driver, locatorType).click();
 	}
-
+	public int getListElementSize(WebDriver driver, String locator) {
+		return getListWebElement(driver, locator).size();
+	}
+	
+	public int getListElementSize(WebDriver driver, String locatorType,String...dynamicValues) {
+		return getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).size();
+	}
+	public void checkToElement(WebDriver driver, String locatorType) {
+		if(!getWebElemet(driver,locatorType).isSelected()) {
+			getWebElemet(driver, locatorType).click();
+		}
+	}
+	
+	public void checkToElement(WebDriver driver, String locatorType,String...dynamicValues) {
+		if(!getWebElemet(driver,getDynamicXpath(locatorType, dynamicValues)).isSelected()) {
+			getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).click();
+		}
+	}
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
 		WebElement element = getWebElemet(driver, locatorType);
 		element.clear();
@@ -181,13 +198,13 @@ public class BasePage {
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
 		Select select = new Select(getWebElemet(driver, locatorType));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem,
 			String... dynamicValues) {
 		Select select = new Select(getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 
 	public String getSelectedItemDefaultDropdown(WebDriver driver, String locatorType) {

@@ -9,4 +9,10 @@ public class HomePageUI {
 	public static final String ALL_ROW_EACH_PAGE = "xpath=//tbody/tr";
 	public static final String ALL_ROW__COUNTRY_EACH_PAGE = "xpath=//tbody/tr/td[@data-key='country']";
 
+	
+	public static final String DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME = "xpath=//th[text()='Company']/preceding-sibling::th";
+	public static final String DYNAMIC_TEXTBOX_BY_ROW_INDEX_COLUMN_INDEX = "xpath=//tr[%s]/td[%s]/input";
+	public static final String DYNAMIC_DROPDOWN_BY_ROW_INDEX_COLUMN_INDEX = "xpath=//tr[%s]/td[%s]//select";
+	public static final String DYNAMIC_CHECKBOX_BY_ROW_INDEX_COLUMN_INDEX = "xpath=//tr[%s]/td[%s]//input[@type='checkbox']";
+
 }

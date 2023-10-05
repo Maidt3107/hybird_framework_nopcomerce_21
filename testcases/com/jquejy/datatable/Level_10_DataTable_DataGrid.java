@@ -31,7 +31,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		homePage = PageGeneratorManager.getHomePage(driver);
 
 	}
-
+	@Test
 	public void Table_01() {
 		homePage.openPagingByPageNumber("10");
 		homePage.sleepInSecond(1);
@@ -49,7 +49,7 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		homePage.sleepInSecond(1);
 		Assert.assertTrue(homePage.isPageNumberActived("18"));
 	}
-
+	@Test
 	public void Table_02_Enter_To_Header() {
 		homePage.refreshCurrentPage(driver);
 
@@ -77,6 +77,29 @@ public class Level_10_DataTable_DataGrid extends BaseTest {
 		actualAllCountryValues = homePage.getValueEachRowAtAllPage();
 		
 	}
+	
+	@Test
+	public void Table_04_Action_By_Index() { // class 27 topic 73
+	
+		homePage.openPageURL(driver, "https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/");
+		
+		//nhập vào textbox tại cột Contact Person dòng thứ 2
+		homePage.enterToTextboxByColumnNameAndRowIndex("Contact Person","2","Oliver Lahl");
+		homePage.enterToTextboxByColumnNameAndRowIndex("Company","1","Bayer Munich");
+		
+		// select dữ liệu tại cột country dòng thứ 3 
+		homePage.selectDropdownByColumnNameAndIndex("Country","3","United Kingdom");
+		homePage.selectDropdownByColumnNameAndIndex("Country","1","Japan");
+		
+		// click vào checkbox tại cột NPO? dòng thứ 1
+		homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?","3");
+		homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?","2");
+		homePage.clickToCheckboxByColumnNameAndRowIndex("NPO?","1");
+	
+		
+		
+	}
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

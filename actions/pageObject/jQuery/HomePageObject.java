@@ -73,4 +73,30 @@ public class HomePageObject extends BasePage {
 
 	}
 
+	public void enterToTextboxByColumnNameAndRowIndex(String columnName, String rowIndex, String valueToSend) {
+		int columnIndex = getElementSize(driver,HomePageUI.DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME,columnName) + 1;
+		
+		waitForElementVisible(driver,  HomePageUI.DYNAMIC_TEXTBOX_BY_ROW_INDEX_COLUMN_INDEX, rowIndex,String.valueOf(columnIndex));
+		sendkeyToElement(driver, HomePageUI.DYNAMIC_TEXTBOX_BY_ROW_INDEX_COLUMN_INDEX, valueToSend, rowIndex.valueOf(columnIndex));
+		
+	}
+
+	public void selectDropdownByColumnNameAndIndex(String columnName, String rowIndex, String dropdpwnItem) {
+		int columnIndex = getElementSize(driver,HomePageUI.DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME,columnName) + 1;
+		
+		waitForElementClickable(driver,HomePageUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_COLUMN_INDEX, rowIndex,String.valueOf(columnIndex));
+		selectItemInDefaultDropdown(driver, HomePageUI.DYNAMIC_DROPDOWN_BY_ROW_INDEX_COLUMN_INDEX, rowIndex,String.valueOf(columnIndex));
+		
+	}
+
+	public void clickToCheckboxByColumnNameAndRowIndex(String columnName, String rowIndex) {
+		int columnIndex = getElementSize(driver,HomePageUI.DYNAMIC_COLUMN_INDEX_BY_COLUMN_NAME,columnName) + 1;
+		waitForElementClickable(driver,HomePageUI.DYNAMIC_CHECKBOX_BY_ROW_INDEX_COLUMN_INDEX, rowIndex,String.valueOf(columnIndex));
+		
+		checkToElement(driver,HomePageUI.DYNAMIC_CHECKBOX_BY_ROW_INDEX_COLUMN_INDEX, rowIndex,String.valueOf(columnIndex));
+		
+	}
+
+	
+
 }
