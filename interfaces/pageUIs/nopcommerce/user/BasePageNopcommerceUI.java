@@ -1,6 +1,6 @@
 package pageUIs.nopcommerce.user;
 
-public class BasePageUI {
+public class BasePageNopcommerceUI {
 	public static final String CUSTOMER_INFOR_LINK = "XPath=//div[contains(@class,'account-navigation')]//a[text()='Customer info']";
 	public static final String ADDRESS_LINK = "XPATH=//div[contains(@class,'account-navigation')]//a[text()='Addresses']";
 	public static final String MY_PRODUCT_REVIEW_LINK = "Xpath=//div[contains(@class,'account-navigation')]//a[text()='My product reviews']";

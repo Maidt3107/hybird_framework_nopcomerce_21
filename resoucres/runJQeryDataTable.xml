@@ -6,7 +6,7 @@
   <test name="Run on  Chrome ">
   <parameter name = "browser" value="chrome"/>
     <classes>
-      <class name="com.jquejy.datatable.Level_10_DataTable_DataGrid"/>
+      <class name="com.jquery.Level_10_DataTable_DataGrid"/>
     </classes>
   </test> 
   

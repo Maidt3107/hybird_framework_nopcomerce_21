@@ -18,42 +18,43 @@ public class BaseTest {
 	private WebDriver driver;
 
 	protected WebDriver getBrowserDriver(String browserName) {
-		if (browserName.equals("firefox")) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
-		} else if (browserName.equals("h_firefox")) {
+		} else if (browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new FirefoxDriver(options);
 
-		} else if (browserName.equals("chrome")) {
+		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
-		} else if (browserName.equals("h_chrome")) {
+		} else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 
-		} else if (browserName.equals("edge")) {
+		} else if (browserList == BrowserList.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 
-		} else if (browserName.equals("IE")) {
+		} else if (browserList == BrowserList.IE) {
 			// arch32()-- nên dùng IE 32 Bit thì chạy sẽ nhanh hơn
 			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
 
-		} else if (browserName.equals("opera")) {
+		} else if (browserList == BrowserList.OPERA) {
 			WebDriverManager.operadriver().setup();
 			driver = new OperaDriver();
 
-		} else if (browserName.equals("coccoc")) {
+		} else if (browserList == BrowserList.COCCOC) {
 			// cốc cốc browser trừ đi 5-6 version ra ChromeDriver
 			WebDriverManager.chromedriver().driverVersion("114.0.5735.90").setup();
 			ChromeOptions options = new ChromeOptions();
@@ -65,7 +66,7 @@ public class BaseTest {
 			}
 			driver = new ChromeDriver(options);
 
-		} else if (browserName.equals("brave")) {
+		} else if (browserList == BrowserList.BRAVE) {
 			// Brave version nào thì dùng chrome driver version đó
 			WebDriverManager.chromedriver().driverVersion("114.0.5735.90").setup();
 			ChromeOptions options = new ChromeOptions();
@@ -82,42 +83,43 @@ public class BaseTest {
 	}
 
 	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
-		if (browserName.equals("firefox")) {
+		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 
-		} else if (browserName.equals("h_firefox")) {
+		} else if (browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new FirefoxDriver(options);
 
-		} else if (browserName.equals("chrome")) {
+		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
-		} else if (browserName.equals("h_chrome")) {
+		} else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--headless");
 			options.addArguments("window-size=1920x1080");
 			driver = new ChromeDriver(options);
 
-		} else if (browserName.equals("edge")) {
+		} else if (browserList == BrowserList.EDGE) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 
-		} else if (browserName.equals("IE")) {
+		} else if (browserList == BrowserList.IE) {
 			// arch32()-- nên dùng IE 32 Bit thì chạy sẽ nhanh hơn
 			WebDriverManager.iedriver().arch32().setup();
 			driver = new InternetExplorerDriver();
 
-		} else if (browserName.equals("opera")) {
+		} else if (browserList == BrowserList.OPERA) {
 			WebDriverManager.operadriver().setup();
 			driver = new OperaDriver();
 
-		} else if (browserName.equals("coccoc")) {
+		} else if (browserList == BrowserList.COCCOC) {
 			// cốc cốc browser trừ đi 5-6 version ra ChromeDriver
 			WebDriverManager.chromedriver().driverVersion("114.0.5735.90").setup();
 			ChromeOptions options = new ChromeOptions();
@@ -129,7 +131,7 @@ public class BaseTest {
 			}
 			driver = new ChromeDriver(options);
 
-		} else if (browserName.equals("brave")) {
+		} else if (browserList == BrowserList.BRAVE) {
 			// Brave version nào thì dùng chrome driver version đó
 			WebDriverManager.chromedriver().driverVersion("114.0.5735.90").setup();
 			ChromeOptions options = new ChromeOptions();

@@ -1,11 +1,11 @@
-package com.jquejy.datatable;
+package com.jquery;
 
 import org.testng.annotations.Test;
 
 import commons.BasePage;
 import commons.BaseTest;
-import pageObject.jQuery.HomePageObject;
-import pageObject.jQuery.PageGeneratorManager;
+import pageObject.jQuery.dataTable.HomePageObject;
+import pageObject.jQuery.dataTable.PageGeneratorManager;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
