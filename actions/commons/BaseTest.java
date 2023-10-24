@@ -79,12 +79,12 @@ public class BaseTest {
 			throw new RuntimeException("Browser name invalid.");
 		}
 
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(GlobalConstants.PORTAL_PAGE_URL);
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
+	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -144,24 +144,26 @@ public class BaseTest {
 			throw new RuntimeException("Browser name invalid.");
 		}
 
-		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
-		driver.get(appUrl);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get(getEnvironmentUrl(environmentName));
 		return driver;
 	}
 
-	protected String getEnvironmentUrl(String serverName) {
-		String url = null;
-		switch (serverName) {
-		case "DEV":
-			url = GlobalConstants.PORTAL_DEV_URL;
-			break;
-		case "TEST":
-			url = GlobalConstants.PORTAL_TESTING_URL;
-			break;
-		}
-		return url;
+	private String 	getEnvironmentUrl (String serverName) {
+		String envUrl = null;
+		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
+		if (environment == EnviromentList.DEV) {
+			envUrl = "https://demo.nopcommerce.com/";			
+		} else if (environment == EnviromentList.TESSTING) {
+			envUrl = "https://demo.nopcommerce.com/";			
+		} else if (environment == EnviromentList.STAGING) {
+			envUrl = "";			
+		} else if (environment == EnviromentList.PRODUCTION) {
+			envUrl = "";		
+		} 
+		return envUrl;
 	}
-
+	
 	protected int generateFakeNumber() {
 		Random rand = new Random();
 		return rand.nextInt(9999);
