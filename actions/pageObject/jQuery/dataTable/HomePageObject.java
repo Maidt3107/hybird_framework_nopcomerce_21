@@ -33,11 +33,6 @@ public class HomePageObject extends BasePage {
 
 	}
 
-	public void refreshCurrentPage(WebDriver driver2) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public boolean isPageNumberActived(String pageNumber) {
 		waitForElementVisible(driver, HomePageUI.PAGINATION_PAGE_ACTIVED_BY_NUMBER, pageNumber);
 		return isElementDisplayed(driver, HomePageUI.PAGINATION_PAGE_ACTIVED_BY_NUMBER, pageNumber);

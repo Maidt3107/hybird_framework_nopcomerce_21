@@ -40,9 +40,6 @@ public class HomePageObject extends BasePage {
 		return isImageLoaded(driver, HomePageUI.FILE_NAME_UPLOADED_IMAGE, fileName);
 	}
 
-	public void refreshCurrentPage(WebDriver driver2) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

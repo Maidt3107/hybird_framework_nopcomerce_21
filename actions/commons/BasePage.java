@@ -59,7 +59,7 @@ public class BasePage {
 		driver.navigate().forward();
 	}
 
-	public void refreshToPage(WebDriver driver) {
+	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
 	}
 
@@ -163,12 +163,12 @@ public class BasePage {
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType) {
-		getWebElemet(driver, locatorType).click();
+		this.getWebElemet(driver, locatorType).click();
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType, String... dynamicValues) {
 		locatorType = getDynamicXpath(locatorType, dynamicValues);
-		getWebElemet(driver, locatorType).click();
+		this.getWebElemet(driver, locatorType).click();
 	}
 	public int getListElementSize(WebDriver driver, String locator) {
 		return getListWebElement(driver, locator).size();
@@ -189,19 +189,19 @@ public class BasePage {
 		}
 	}
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
-		WebElement element = getWebElemet(driver, locatorType);
+		WebElement element = this.getWebElemet(driver, locatorType);
 		element.clear();
 		element.sendKeys(textValue);
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
-		WebElement element = getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues));
+		WebElement element = this.getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues));
 		element.clear();
 		element.sendKeys(textValue);
 	}
 
 	public void selectItemInDefaultDropdown(WebDriver driver, String locatorType, String textItem) {
-		Select select = new Select(getWebElemet(driver, locatorType));
+		Select select = new Select(this.getWebElemet(driver, locatorType));
 		select.selectByVisibleText(textItem);
 	}
 
