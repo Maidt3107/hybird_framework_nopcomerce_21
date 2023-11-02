@@ -14,6 +14,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import exception.BrowserNotSupport;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -76,7 +77,7 @@ public class BaseTest {
 			driver = new ChromeDriver(options);
 
 		} else {
-			throw new RuntimeException("Browser name invalid.");
+			throw new BrowserNotSupport(browserName);
 		}
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
