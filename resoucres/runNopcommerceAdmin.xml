@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="Nopcommerce - Admin">
+
+<listeners>
+<listener class-name="commons.MethodListener"/>
+<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+</listeners>
+
+<parameter name = "environmentName" value="DEV"/>
+
+  <test name="Run on  CHROME ">
+  <parameter name = "browser" value="CHROME"/>
+    <classes>
+      <class name="com.nopcommerce.user.Level_14_Log_ReportNG"/>
+    </classes>
+  </test> 
+  
+  
+</suite> 

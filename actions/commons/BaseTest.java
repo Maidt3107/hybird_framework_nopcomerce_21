@@ -3,6 +3,8 @@ package commons;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,6 +21,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	private WebDriver driver;
+	protected final Log log;
+	
+	protected BaseTest() {
+		log = LogFactory.getLog(getClass());
+	}
 
 	protected WebDriver getBrowserDriver(String browserName) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
@@ -85,7 +92,7 @@ public class BaseTest {
 		return driver;
 	}
 
-	protected WebDriver getBrowserDriver(String browserName, String environmentName) {
+	protected WebDriver getBrowserDriver(String browserName, String appUrl) {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -146,11 +153,15 @@ public class BaseTest {
 		}
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(this.getEnvironmentUrl(environmentName));
+		driver.get(appUrl);
 		return driver;
 	}
 
-	private String 	getEnvironmentUrl (String serverName) {
+	public WebDriver getDriverInstance() {
+		return this.driver;
+	}
+	
+	protected String getEnvironmentUrl (String serverName) {
 		String envUrl = null;
 		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
 		if (environment == EnviromentList.DEV) {
@@ -174,9 +185,9 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertTrue(condition);
-			System.out.println(" -------------------------- PASSED -------------------------- ");
+			log.info(" -------------------------- PASSED -------------------------- ");
 		} catch (Throwable e) {
-			System.out.println(" -------------------------- FAILED -------------------------- ");
+			log.info(" -------------------------- FAILED -------------------------- ");
 			pass = false;
 
 			// add lỗi vào ReporNG
@@ -190,9 +201,9 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertFalse(condition);
-			System.out.println(" -------------------------- PASSED -------------------------- ");
+			log.info(" -------------------------- PASSED -------------------------- ");
 		} catch (Throwable e) {
-			System.out.println(" -------------------------- FAILED -------------------------- ");
+			log.info(" -------------------------- FAILED -------------------------- ");
 			pass = false;
 
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
@@ -205,9 +216,9 @@ public class BaseTest {
 		boolean pass = true;
 		try {
 			Assert.assertEquals(actual, expected);
-			System.out.println(" -------------------------- PASSED -------------------------- ");
+			log.info(" -------------------------- PASSED -------------------------- ");
 		} catch (Throwable e) {
-			System.out.println(" -------------------------- FAILED -------------------------- ");
+			log.info(" -------------------------- FAILED -------------------------- ");
 			pass = false;		
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
