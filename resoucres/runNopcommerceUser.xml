@@ -16,7 +16,7 @@
   <test name="Run on  CHROME ">
   <parameter name = "browser" value="CHROME"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_15_Extent_V3_Screenshot"/>
+      <class name="com.nopcommerce.user.Level_15_Extent_V5"/>
     </classes>
   </test> 
   
