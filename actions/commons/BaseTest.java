@@ -235,7 +235,7 @@ public class BaseTest {
 
 	public void deleteAllureReport() {
 		try {
-			String pathFolderDownload = GlobalConstants.PROJECT_PATH + "/allure-json";
+			String pathFolderDownload = GlobalConstants.PROJECT_PATH + "/allure-results";
 			File file = new File(pathFolderDownload);
 			File[] listOfFiles = file.listFiles();
 			if (listOfFiles.length != 0) {
