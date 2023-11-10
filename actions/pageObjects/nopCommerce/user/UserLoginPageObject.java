@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import commons.BasePage;
 import commons.PageGeneratorManager;
+import io.qameta.allure.Step;
 import pageUIs.nopcommerce.user.LoginPageUI;
 
 public class UserLoginPageObject extends BasePage {
@@ -13,17 +14,20 @@ public class UserLoginPageObject extends BasePage {
 		this.driver = driver;
 	}
 
+	@Step("Enter to Email textbox with value is {0}")
 	public void inputToEmailTextbox(String invalidEmail) {
 		waitForElementVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, invalidEmail);
 	}
 
+	@Step("Enter to  Password textbox with value is {0}")
 	public void inputToPasswordTextbox(String password) {
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_TEXTBOX);
 		sendkeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 
 	}
 
+	@Step("Click to Login Button")
 	public UserHomePageObject clickToLoginButton() {
 		waitForElementClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
