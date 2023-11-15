@@ -1,0 +1,4 @@
+[2023-11-15 12:03:22,965 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 01: Navigate to Logout link
+[2023-11-15 12:03:23,973 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 02: Enter to Email textbox with value is 'afc5294@mail.vn'
+[2023-11-15 12:03:24,179 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 03: Enter to Password textbox with value is 'afc5294@mail.vn'
+[2023-11-15 12:03:24,365 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 04: Click to Logout link

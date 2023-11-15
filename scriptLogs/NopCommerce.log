@@ -331,3 +331,17 @@
 [2023-11-10 09:27:17,704 INFO com.nopcommerce.user.Level_14_Log_ReportNG] - Login - Step 06: Navigate to 'My Account' page
 [2023-11-10 09:27:18,122 INFO com.nopcommerce.user.Level_14_Log_ReportNG] - Login - Step 07: Verify  'Customer Infor' page is displayed
 [2023-11-10 09:27:18,211 INFO com.nopcommerce.user.Level_14_Log_ReportNG] -  -------------------------- FAILED -------------------------- 
+[2023-11-11 22:15:52,768 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 01: Navigate to Logout link
+[2023-11-11 22:15:54,038 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 02: Enter to Email textbox with value is 'null'
+[2023-11-11 22:21:15,245 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 01: Navigate to Logout link
+[2023-11-11 22:21:16,287 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 02: Enter to Email textbox with value is 'afc4762@mail.vn'
+[2023-11-11 22:21:16,481 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 03: Enter to Password textbox with value is 'afc4762@mail.vn'
+[2023-11-11 22:21:16,676 INFO com.nopcommerce.user.Level_16_Share_Data] - Login - Step 04: Click to Logout link
+[2023-11-11 22:35:41,733 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 01: Navigate to Logout link
+[2023-11-11 22:35:42,963 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 02: Enter to Email textbox with value is 'afc228@mail.vn'
+[2023-11-11 22:35:43,189 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 03: Enter to Password textbox with value is 'afc228@mail.vn'
+[2023-11-11 22:35:43,380 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 04: Click to Logout link
+[2023-11-15 12:03:22,965 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 01: Navigate to Logout link
+[2023-11-15 12:03:23,973 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 02: Enter to Email textbox with value is 'afc5294@mail.vn'
+[2023-11-15 12:03:24,179 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 03: Enter to Password textbox with value is 'afc5294@mail.vn'
+[2023-11-15 12:03:24,365 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 04: Click to Logout link
