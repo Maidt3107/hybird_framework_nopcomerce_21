@@ -345,3 +345,132 @@
 [2023-11-15 12:03:23,973 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 02: Enter to Email textbox with value is 'afc5294@mail.vn'
 [2023-11-15 12:03:24,179 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 03: Enter to Password textbox with value is 'afc5294@mail.vn'
 [2023-11-15 12:03:24,365 INFO com.nopcommerce.user.Level_16_Share_Data_A] - Login - Step 04: Click to Logout link
+[2023-11-15 12:34:13,031 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 01: Navigate to 'Register' page
+[2023-11-15 12:34:13,741 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 12:34:14,120 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 12:34:14,470 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 04: Enter to Email textbox with value is 'afc5131@mail.vn'
+[2023-11-15 12:34:14,754 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 12:34:14,967 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 12:34:15,183 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 07: Click to 'Register' button
+[2023-11-15 12:34:15,981 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 08: Verify register success message is displayed
+[2023-11-15 12:34:16,067 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:34:16,068 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 09: Click to Logout link
+[2023-11-15 12:34:16,911 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 01: Navigate to Logout link
+[2023-11-15 12:34:17,418 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 02: Enter to Email textbox with value is 'afc5131@mail.vn'
+[2023-11-15 12:34:17,650 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 03: Enter to Password textbox with value is 'afc5131@mail.vn'
+[2023-11-15 12:34:17,897 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 04: Click to Logout link
+[2023-11-15 12:34:19,282 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 05: Verify 'My Account' link displayed
+[2023-11-15 12:34:19,428 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:34:19,429 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 06: Navigate to 'My Account' page
+[2023-11-15 12:34:19,896 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 07: Verify  'Customer Infor' page is displayed
+[2023-11-15 12:34:20,010 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:35:09,025 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 01: Navigate to 'Register' page
+[2023-11-15 12:35:10,120 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 12:35:10,324 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 12:35:10,588 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 04: Enter to Email textbox with value is 'afc6471@mail.vn'
+[2023-11-15 12:35:10,772 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 12:35:10,936 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 12:35:11,189 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 07: Click to 'Register' button
+[2023-11-15 12:35:12,439 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 08: Verify register success message is displayed
+[2023-11-15 12:35:12,532 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:35:12,533 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Register - Step 09: Click to Logout link
+[2023-11-15 12:35:13,076 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 01: Navigate to Logout link
+[2023-11-15 12:35:13,496 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 02: Enter to Email textbox with value is 'afc6471@mail.vn'
+[2023-11-15 12:35:13,687 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 03: Enter to Password textbox with value is 'afc6471@mail.vn'
+[2023-11-15 12:35:13,881 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 04: Click to Logout link
+[2023-11-15 12:35:14,665 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 05: Verify 'My Account' link displayed
+[2023-11-15 12:35:14,758 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:35:14,758 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 06: Navigate to 'My Account' page
+[2023-11-15 12:35:15,225 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Login - Step 07: Verify  'Customer Infor' page is displayed
+[2023-11-15 12:35:15,301 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:40:53,325 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 01: Navigate to 'Register' page
+[2023-11-15 12:40:54,457 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 12:40:54,686 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 12:40:54,867 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 04: Enter to Email textbox with value is 'afc8759@mail.vn'
+[2023-11-15 12:40:55,046 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 12:40:55,222 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 12:40:55,404 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 07: Click to 'Register' button
+[2023-11-15 12:40:56,151 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 08: Verify register success message is displayed
+[2023-11-15 12:40:56,241 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] -  -------------------------- FAILED -------------------------- 
+[2023-11-15 12:40:56,244 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 09: Click to Logout link
+[2023-11-15 12:40:56,696 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 10: Navigate to Logout link
+[2023-11-15 12:40:57,150 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 11: Enter to Email textbox with value is 'afc8759@mail.vn'
+[2023-11-15 12:40:57,348 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 12: Enter to Password textbox with value is 'afc8759@mail.vn'
+[2023-11-15 12:40:57,552 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 13: Click to Logout link
+[2023-11-15 12:46:56,390 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 01: Navigate to 'Register' page
+[2023-11-15 12:46:57,502 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 12:46:57,790 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 12:46:57,986 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 04: Enter to Email textbox with value is 'afc3550@mail.vn'
+[2023-11-15 12:46:58,168 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 12:46:58,390 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 12:46:58,659 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 07: Click to 'Register' button
+[2023-11-15 12:46:59,521 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 08: Verify register success message is displayed
+[2023-11-15 13:41:12,056 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 01: Navigate to 'Register' page
+[2023-11-15 13:41:13,238 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 13:41:13,462 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 13:41:13,635 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 04: Enter to Email textbox with value is 'afc9307@mail.vn'
+[2023-11-15 13:41:13,830 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 13:41:14,018 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 13:41:14,247 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 07: Click to 'Register' button
+[2023-11-15 13:41:15,560 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 08: Verify register success message is displayed
+[2023-11-15 13:51:35,020 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 01: Navigate to 'Register' page
+[2023-11-15 13:51:36,137 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 13:51:36,421 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 13:51:36,629 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 04: Enter to Email textbox with value is 'afc6652@mail.vn'
+[2023-11-15 13:51:36,822 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 13:51:37,016 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 13:51:37,197 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 07: Click to 'Register' button
+[2023-11-15 13:51:37,937 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 08: Verify register success message is displayed
+[2023-11-15 14:04:15,898 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 01: Navigate to 'Register' page
+[2023-11-15 14:04:16,554 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 14:04:16,782 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 14:04:16,959 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 04: Enter to Email textbox with value is 'afc9288@mail.vn'
+[2023-11-15 14:04:17,127 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 14:04:17,305 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 14:04:17,463 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 07: Click to 'Register' button
+[2023-11-15 14:04:18,212 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Pre.Condition - Step 08: Verify register success message is displayed
+[2023-11-15 14:04:18,467 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - OS name = windows 10
+[2023-11-15 14:04:18,468 INFO com.nopcommerce.user.Level_17_Custom_Close_Driver] - Driver instance name = chromedriver: chrome on windows (1a0227e9443380c851cd7f0b3165adcb)
+[2023-11-15 22:57:29,502 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-11-15 22:57:30,155 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-15 22:57:30,384 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-15 22:57:30,546 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc9174@mail.vn'
+[2023-11-15 22:57:30,713 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-15 22:57:30,879 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-15 22:57:31,053 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-11-15 22:58:13,279 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-11-15 22:58:15,277 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc9174@mail.vn'
+[2023-11-15 22:58:15,455 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc9174@mail.vn'
+[2023-11-15 22:58:15,661 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-11-15 22:58:16,130 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-11-15 22:58:56,723 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-11-15 22:58:56,723 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (542a11a49b5c6d9cb12ef644d7f8ed2e)
+[2023-11-16 21:26:22,661 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-11-16 21:26:23,509 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-16 21:26:23,743 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-16 21:26:24,433 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc1574@mail.vn'
+[2023-11-16 21:26:24,722 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-16 21:26:24,906 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-16 21:26:35,105 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-11-16 21:27:16,735 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-11-16 21:27:18,350 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc1574@mail.vn'
+[2023-11-16 21:27:18,535 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc1574@mail.vn'
+[2023-11-16 21:27:18,751 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-11-16 21:27:19,248 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-11-16 21:27:59,863 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-11-16 21:27:59,863 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (4511352cf18d642fd850df833bc9ceff)
+[2023-11-16 21:47:54,487 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-11-16 21:47:55,394 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-11-16 21:47:55,653 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-11-16 21:47:56,500 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc2234@mail.vn'
+[2023-11-16 21:47:56,802 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-11-16 21:47:56,998 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-11-16 21:47:57,227 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-11-16 21:48:39,573 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-11-16 21:48:41,594 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc2234@mail.vn'
+[2023-11-16 21:48:41,758 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc2234@mail.vn'
+[2023-11-16 21:48:41,919 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-11-16 21:48:42,361 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-11-16 21:49:23,047 INFO com.nopcommerce.user.Level_18_Pattern_Object] - My Account - Step 01: Navigate to 'My Account' page
+[2023-11-16 21:50:03,686 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-11-16 21:50:03,687 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (fc1aaea9823511cf480fa24c1af2a86b)

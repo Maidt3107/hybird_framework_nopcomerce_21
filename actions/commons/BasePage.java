@@ -63,12 +63,14 @@ public class BasePage {
 	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
 	}
-	public Set<Cookie> getAllCookies(WebDriver driver){
+
+	public Set<Cookie> getAllCookies(WebDriver driver) {
 		return driver.manage().getCookies();
-		
+
 	}
-	public void setCookies(WebDriver driver,Set<Cookie> cookies) {
-		for(Cookie cookie : cookies) {
+
+	public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+		for (Cookie cookie : cookies) {
 			driver.manage().addCookie(cookie);
 		}
 		sleepInSecond(3);
@@ -131,7 +133,7 @@ public class BasePage {
 
 	public By getByLocator(String locatorType) {
 		By by = null;
-		
+
 		if (locatorType.startsWith("id=") || locatorType.startsWith("ID=") || locatorType.startsWith("Id=")) {
 			by = By.id(locatorType.substring(3));
 		} else if (locatorType.startsWith("class=") || locatorType.startsWith("CLASS=")
@@ -181,24 +183,27 @@ public class BasePage {
 		locatorType = getDynamicXpath(locatorType, dynamicValues);
 		this.getWebElemet(driver, locatorType).click();
 	}
+
 	public int getListElementSize(WebDriver driver, String locator) {
 		return getListWebElement(driver, locator).size();
 	}
-	
-	public int getListElementSize(WebDriver driver, String locatorType,String...dynamicValues) {
+
+	public int getListElementSize(WebDriver driver, String locatorType, String... dynamicValues) {
 		return getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).size();
 	}
+
 	public void checkToElement(WebDriver driver, String locatorType) {
-		if(!getWebElemet(driver,locatorType).isSelected()) {
+		if (!getWebElemet(driver, locatorType).isSelected()) {
 			getWebElemet(driver, locatorType).click();
 		}
 	}
-	
-	public void checkToElement(WebDriver driver, String locatorType,String...dynamicValues) {
-		if(!getWebElemet(driver,getDynamicXpath(locatorType, dynamicValues)).isSelected()) {
+
+	public void checkToElement(WebDriver driver, String locatorType, String... dynamicValues) {
+		if (!getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).isSelected()) {
 			getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).click();
 		}
 	}
+
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue) {
 		WebElement element = this.getWebElemet(driver, locatorType);
 		element.clear();
@@ -268,6 +273,10 @@ public class BasePage {
 	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName) {
 		return getWebElemet(driver, locatorType).getAttribute(attributeName);
 	}
+	
+	public String getElementAttribute(WebDriver driver, String locatorType, String attributeName, String... dynamicValues) {
+		return getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).getAttribute(attributeName);
+	}
 
 	public String getElementText(WebDriver driver, String locatorType) {
 		return getWebElemet(driver, locatorType).getText();
@@ -299,6 +308,12 @@ public class BasePage {
 			element.click();
 		}
 	}
+	public void checkToDefaultCheckboxRadio(WebDriver driver, String locatorType,String... dynamicValues) {
+		WebElement element = getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues));
+		if (!element.isSelected()) {
+			element.click();
+		}
+	}
 
 	public void unToDefaultCheckboxRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElemet(driver, locatorType);
@@ -309,18 +324,18 @@ public class BasePage {
 
 	public boolean isElementDisplayed(WebDriver driver, String locatorType) {
 		try {
-			//Level_13_Element_Undisplayed
-			//tìm thấy element
-			//case 1 : displayed - trả về true
-			//case 2 : undisplayed - trả về false
+			// Level_13_Element_Undisplayed
+			// tìm thấy element
+			// case 1 : displayed - trả về true
+			// case 2 : undisplayed - trả về false
 			return getWebElemet(driver, locatorType).isDisplayed();
 		} catch (NoSuchElementException e) {
 			// case 3: undisplayed - trả về false
 			return false;
 		}
-		
+
 	}
-	
+
 	/*
 	 * public boolean isElementUndisplayed(WebDriver driver, String locatorType) {
 	 * boolean status = true; if(getWebElemet(driver, locatorType).isDisplayed()) {
@@ -330,25 +345,26 @@ public class BasePage {
 	public boolean isElementDisplayed(WebDriver driver, String locatorType, String... dynamicValues) {
 		return getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
 	}
-	
-	public boolean isElementUndisplayed(WebDriver driver, String locator) {		
+
+	public boolean isElementUndisplayed(WebDriver driver, String locator) {
 		overrideImplicitTimeout(driver, shortTimeout);
 		List<WebElement> elements = getListWebElement(driver, locator);
 		overrideImplicitTimeout(driver, longTimeout);
-		
+
 		if (elements.size() == 0) {
 			return true;
-		} else if(elements.size() > 0 && !elements.get(0).isDisplayed()){
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
 
-	public void overrideImplicitTimeout( WebDriver driver, long timeOut) {
+	public void overrideImplicitTimeout(WebDriver driver, long timeOut) {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
-		
+
 	}
+
 	public boolean isElementEnabled(WebDriver driver, String locatorType) {
 		return getWebElemet(driver, locatorType).isEnabled();
 	}
@@ -369,14 +385,15 @@ public class BasePage {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElemet(driver, locatorType)).perform();
 	}
-	
+
 	public void pressKeyToElement(WebDriver driver, String locatorType, Keys key) {
 		Actions action = new Actions(driver);
-		action.sendKeys(getWebElemet(driver, locatorType),key).perform();
+		action.sendKeys(getWebElemet(driver, locatorType), key).perform();
 	}
+
 	public void pressKeyToElement(WebDriver driver, String locatorType, Keys key, String... dynamicValues) {
 		Actions action = new Actions(driver);
-		action.sendKeys(getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)),key).perform();
+		action.sendKeys(getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)), key).perform();
 	}
 
 	public void scrollToBottomPage(WebDriver driver) {
@@ -453,7 +470,8 @@ public class BasePage {
 			return false;
 		}
 	}
-	public boolean isImageLoaded(WebDriver driver, String locatorType,String... dynamicValues) {
+
+	public boolean isImageLoaded(WebDriver driver, String locatorType, String... dynamicValues) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		boolean status = (boolean) jsExecutor.executeScript(
 				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
@@ -487,8 +505,9 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
-	
-	// wait for element undisplayed in DOM  or not in DOM and override implicit timeout
+
+	// wait for element undisplayed in DOM or not in DOM and override implicit
+	// timeout
 	public void waitForElementUndisplayed(WebDriver driver, String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, shortTimeout);
 		overrideImplicitTimeout(driver, shortTimeout);
@@ -522,18 +541,20 @@ public class BasePage {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(
 				ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
-	} 
+	}
+
 	public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
-		String filePath = GlobalConstants.UPLOAD_FILE;	
+		String filePath = GlobalConstants.UPLOAD_FILE;
 		String fullFileName = "";
-		for(String file : fileNames) {
+		for (String file : fileNames) {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
-		getWebElemet(driver,BasePageJQueryUI.UPLOAD_FILE).sendKeys(fullFileName);
+		getWebElemet(driver, BasePageJQueryUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
-    // đặc thù cho từng  dự án 
-	// tối ưu ở bài học level_07_Switch_page	
+
+	// đặc thù cho từng dự án
+	// tối ưu ở bài học level_07_Switch_page
 	public UserCustomerInforPageObject openCustomerInforPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageNopcommerceUI.CUSTOMER_INFOR_LINK);
 		clickToElement(driver, BasePageNopcommerceUI.CUSTOMER_INFOR_LINK);
@@ -577,10 +598,87 @@ public class BasePage {
 		}
 	}
 
+	// Pattern Object
 	public void openPagesAtMyAccountByPageName(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
 		clickToElement(driver, BasePageNopcommerceUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
 
+	}
+
+	/**
+	 * Enter to dynamic Textbox by ID
+	 * <ul>
+	 * <li>Rest Parameter</li>
+	 * <li>Textbox by ID</li>
+	 * </ul>
+	 * 
+	 * @author: Mai DT
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void inpuToTextboxByID(WebDriver driver, String textboxID, String value) {
+		waitForElementVisible(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+	}
+	
+	/**
+	 * Click to dynamic Button by text
+	 * 
+	 * @author: Mai DT
+	 * @param driver
+	 * @param buttonText
+	 */
+	public void clickToButtonByText(WebDriver driver,String buttonText) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+		clickToElement(driver, BasePageNopcommerceUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+	}
+
+	/**
+	 * Select item in dropdown by Name attribute
+	 * 
+	 * @param driver
+	 * @param dropdownAttributeName
+	 * @param itemValue
+	 */
+	public void selectToDropdownByName(WebDriver driver, String dropdownAttributeName,String itemValue) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
+		selectItemInDefaultDropdown(driver, BasePageNopcommerceUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownAttributeName);
+	}
+	
+	/**
+	 * Click to dynamic radio button by label name
+	 * 
+	 * @param driver
+	 * @param checkboxLabelName
+	 */
+	public void clickToRadioButtonByLabel(WebDriver driver, String radioButtonLabelName) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
+		checkToDefaultCheckboxRadio(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
+	}
+	
+	/**
+	 * Click to dynamic checkbox by label name
+	 * 
+	 * @param driver
+	 * @param checkboxLabelName
+	 */
+	public void clickToCheckboxButtonByLabel(WebDriver driver, String checkboxLabelName) {
+		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BUTTON_BY_LABEL, checkboxLabelName);
+		checkToDefaultCheckboxRadio(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BUTTON_BY_LABEL, checkboxLabelName);
+		
+	}
+
+	/**
+	 * Get value in textbox by textbyID
+	 * 
+	 * @param driver
+	 * @param textboxID
+	 * @return
+	 */
+	public String getTextboxValueByID(WebDriver driver, String textboxID) {
+		waitForElementVisible(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		return getElementAttribute(driver, BasePageNopcommerceUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
 	}
 
 	// tối ưu ở bài học level_08_Switch_role
@@ -598,6 +696,7 @@ public class BasePage {
 	}
 
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
+	
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
 
 }

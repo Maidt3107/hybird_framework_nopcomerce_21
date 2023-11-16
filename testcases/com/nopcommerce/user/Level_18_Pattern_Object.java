@@ -25,7 +25,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
-public class Level_15_ReportNG_Screenshort extends BaseTest {
+public class Level_18_Pattern_Object extends BaseTest {
 
 	@Parameters("browser")
 	@BeforeClass
@@ -37,6 +37,10 @@ public class Level_15_ReportNG_Screenshort extends BaseTest {
 		lastName = "FC";
 		emailAddress = "afc" + generateFakeNumber() + "@mail.vn";
 		validpassword = "123456";
+		
+		date="10";
+		month="August";
+		year ="1998";
 
 	}
 
@@ -45,61 +49,79 @@ public class Level_15_ReportNG_Screenshort extends BaseTest {
 		log.info("Register - Step 01: Navigate to 'Register' page");
 		registerPage = homePage.openRegisterPage();
 
+		registerPage.clickToRadioButtonByLabel(driver,"Female");
+		
 		log.info("Register - Step 02: Enter to Firstname textbox with value is '" + firstName  + "'");
-		registerPage.inputToFirstnameTextbox(firstName);
+		registerPage.inpuToTextboxByID(driver,"FirstName",firstName);
 		
 		log.info("Register - Step 03: Enter to LastName textbox with value is '" + lastName  + "'");
-		registerPage.inputToLastNameTextbox(lastName);
+		registerPage.inpuToTextboxByID(driver,"LastName",lastName );
 		
+		registerPage.selectToDropdownByName(driver,"DateOfBirthDay",date);
+		registerPage.selectToDropdownByName(driver,"DateOfBirthMonth",month);
+		registerPage.selectToDropdownByName(driver,"DateOfBirthYear",year);
+
 		log.info("Register - Step 04: Enter to Email textbox with value is '" + emailAddress  + "'");
-		registerPage.inputToEmailTextbox(emailAddress);
+		registerPage.inpuToTextboxByID(driver,"Email",emailAddress);
 		
+		registerPage.clickToCheckboxButtonByLabel(driver,"Newsletter");
+
 		log.info("Register - Step 05: Enter to Password textbox with value is '" + validpassword  + "'");
-		registerPage.inputToPasswordTextbox(validpassword);
-		
+		registerPage.inpuToTextboxByID(driver,"Password",validpassword);
+
 		log.info("Register - Step 06: Enter to Confirm Password textbox with value is '" + validpassword  + "'");
-		registerPage.inputToConfirmPasswordTextbox(validpassword);
+		registerPage.inpuToTextboxByID(driver,"ConfirmPassword",validpassword);
 		
 		log.info("Register - Step 07: Click to 'Register' button");
 		registerPage.clickToRegisterButton();
+		registerPage.clickToButtonByText(driver,"Register");
 		
 		log.info("Register - Step 08: Verify register success message is displayed");
 		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed..");
-
-		log.info("Register - Step 09: Click to Logout link");
-		homePage = registerPage.clickToLoginLink();
-
 		
-
-	}
+	} 
 	@Test
 	public void User_02_Login() {
 		log.info("Login - Step 01: Navigate to Logout page");
+		homePage = registerPage.clickToLoginLink();
 		loginPage = homePage.openLoginPage();
 
 		log.info("Login - Step 02: Enter to Email textbox with value is '" + emailAddress  + "'");
-		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inpuToTextboxByID(driver,"Email",emailAddress);
 		
 		log.info("Login - Step 03: Enter to Password textbox with value is '" + emailAddress  + "'");
-		loginPage.inputToPasswordTextbox(validpassword);
+		loginPage.inpuToTextboxByID(driver,"Password",emailAddress);
 
 		log.info("Login - Step 04: Click to Logout link");
-		homePage = loginPage.clickToLoginButton();
+		loginPage.clickToButtonByText(driver,"Log in");
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		log.info("Login - Step 05: Verify 'My Account' link displayed");
-		Assert.assertFalse(homePage.isMyAccountLinkDisplayed());
-
-		log.info("Login - Step 06: Navigate to 'My Account' page");
-		customerInforPage = homePage.openMyAccountPage();
-		
-		log.info("Login - Step 07: Verify  'Customer Infor' page is displayed");
-		Assert.assertFalse(customerInforPage.isCustomerInforPageDisplayed());
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 	}
 
-	@AfterClass
+	@Test
+	public void User_03_My_Account() {
+		log.info("My Account - Step 01: Navigate to 'My Account' page");
+		customerInforPage = homePage.openMyAccountPage();
+		
+		log.info("My Account - Step 02: Verify  'Customer Infor' page is displayed");
+		Assert.assertTrue(customerInforPage.isCustomerInforPageDisplayed());
+		
+		log.info("My Account - Step 03: Verify  'First Name' value is correctly");
+		Assert.assertEquals(customerInforPage.getTextboxValueByID(driver,"FirstName"), firstName);
+		
+		log.info("My Account - Step 04: Verify  'Last Name' value is correctly");
+		Assert.assertEquals(customerInforPage.getTextboxValueByID(driver,"LastName"), lastName);
+		
+		log.info("My Account - Step 05: Verify  'Email' value is correctly");
+		Assert.assertEquals(customerInforPage.getTextboxValueByID(driver,"Email"), emailAddress);
+	}
+
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		driver.quit();
+		closeBrowserDriver();
 	}
 
 	private WebDriver driver;
@@ -108,5 +130,6 @@ public class Level_15_ReportNG_Screenshort extends BaseTest {
 	private UserLoginPageObject loginPage;
 	private UserCustomerInforPageObject customerInforPage;
 	private String firstName, lastName, emailAddress, validpassword;
+	private String date,month,year;
 
 }
