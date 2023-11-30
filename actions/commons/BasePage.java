@@ -27,6 +27,8 @@ import pageObjects.nopCommerce.user.UserCustomerInforPageObject;
 import pageObjects.nopCommerce.user.UserHomePageObject;
 import pageObjects.nopCommerce.user.UserMyProductReviewPageObject;
 import pageObjects.nopCommerce.user.UserRewardPointPageObject;
+import pageObjects.wordpress.AdminDashboardPO;
+import pageObjects.wordpress.UserHomePO;
 import pageUIs.jQuery.uploadFile.BasePageJQueryUI;
 import pageUIs.nopcommerce.user.BasePageNopcommerceUI;
 import pageUIs.nopcommerce.user.CustomerInforPageUI;
@@ -209,6 +211,11 @@ public class BasePage {
 		element.clear();
 		element.sendKeys(textValue);
 	}
+	
+	public void clearValueInElementByDeleteKey(WebDriver driver, String locatorType) {
+		WebElement element = this.getWebElemet(driver, locatorType);
+		element.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+	}
 
 	public void sendkeyToElement(WebDriver driver, String locatorType, String textValue, String... dynamicValues) {
 		WebElement element = this.getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues));
@@ -302,13 +309,13 @@ public class BasePage {
 		return getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).size();
 	}
 
-	public void checkToDefaultCheckboxRadio(WebDriver driver, String locatorType) {
+	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElemet(driver, locatorType);
 		if (!element.isSelected()) {
 			element.click();
 		}
 	}
-	public void checkToDefaultCheckboxRadio(WebDriver driver, String locatorType,String... dynamicValues) {
+	public void checkToDefaultCheckboxOrRadio(WebDriver driver, String locatorType,String... dynamicValues) {
 		WebElement element = getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues));
 		if (!element.isSelected()) {
 			element.click();
@@ -346,9 +353,23 @@ public class BasePage {
 		return getWebElemet(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
 	}
 
-	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType) {
 		overrideImplicitTimeout(driver, shortTimeout);
-		List<WebElement> elements = getListWebElement(driver, locator);
+		List<WebElement> elements = getListWebElement(driver, locatorType);
+		overrideImplicitTimeout(driver, longTimeout);
+
+		if (elements.size() == 0) {
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType, String... dynamicValues) {
+		overrideImplicitTimeout(driver, shortTimeout);
+		List<WebElement> elements = getListWebElement(driver,  getDynamicXpath(locatorType, dynamicValues));
 		overrideImplicitTimeout(driver, longTimeout);
 
 		if (elements.size() == 0) {
@@ -501,7 +522,7 @@ public class BasePage {
 				.visibilityOfAllElementsLocatedBy(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
-	public void waitForElementInVisible(WebDriver driver, String locatorType) {
+	public void waitForElementInvisible(WebDriver driver, String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
@@ -515,18 +536,18 @@ public class BasePage {
 		overrideImplicitTimeout(driver, longTimeout);
 	}
 
-	public void waitForElementInVisible(WebDriver driver, String locatorType, String... dynamicValues) {
+	public void waitForElementInvisible(WebDriver driver, String locatorType, String... dynamicValues) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions
 				.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
-	public void waitForAllElementInVisible(WebDriver driver, String locatorType) {
+	public void waitForAllElementInvisible(WebDriver driver, String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions.visibilityOfAllElements(getListWebElement(driver, locatorType)));
 	}
 
-	public void waitForAllElementInVisible(WebDriver driver, String locatorType, String... dynamicValues) {
+	public void waitForAllElementInvisible(WebDriver driver, String locatorType, String... dynamicValues) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
 		explicitWait.until(ExpectedConditions
 				.visibilityOfAllElements(getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues))));
@@ -654,7 +675,7 @@ public class BasePage {
 	 */
 	public void clickToRadioButtonByLabel(WebDriver driver, String radioButtonLabelName) {
 		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
-		checkToDefaultCheckboxRadio(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopcommerceUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radioButtonLabelName);
 	}
 	
 	/**
@@ -665,7 +686,7 @@ public class BasePage {
 	 */
 	public void clickToCheckboxButtonByLabel(WebDriver driver, String checkboxLabelName) {
 		waitForElementClickable(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BUTTON_BY_LABEL, checkboxLabelName);
-		checkToDefaultCheckboxRadio(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BUTTON_BY_LABEL, checkboxLabelName);
+		checkToDefaultCheckboxOrRadio(driver, BasePageNopcommerceUI.DYNAMIC_CHECKBOX_BUTTON_BY_LABEL, checkboxLabelName);
 		
 	}
 
@@ -695,6 +716,17 @@ public class BasePage {
 
 	}
 
+	public UserHomePO openEndUserSite(WebDriver driver,String endUserUrl) {
+		openPageURL(driver, endUserUrl);
+		return pageObjects.wordpress.PageGeneratorManager.getUserHomePage(driver);
+	}
+
+	
+	public AdminDashboardPO openAdminSite(WebDriver driver, String adminUrl) {
+		openPageURL(driver, adminUrl);
+		return pageObjects.wordpress.PageGeneratorManager.getAdminDashboardPage(driver);
+	}
+	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
