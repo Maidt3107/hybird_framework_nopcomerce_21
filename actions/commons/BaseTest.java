@@ -2,6 +2,10 @@ package commons;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +19,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
@@ -27,12 +34,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	private WebDriver driver;
 	protected final Log log;
-	
+
 	@BeforeSuite
 	public void initBeforeSuite() {
 		deleteAllureReport();
 	}
-	
+
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
 	}
@@ -41,7 +48,11 @@ public class BaseTest {
 		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
 		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
+			options.addPreference("intl.accept_languages", "vi-vn, vi, en-us, en");
+			driver = new FirefoxDriver(options);
 
 		} else if (browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -52,7 +63,20 @@ public class BaseTest {
 
 		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions();
+			
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			
+			prefs.put("profile.default_content_settings.popups", 0);
+			prefs.put("download.default_directory", GlobalConstants.PROJECT_PATH + "\\downloadFiles");
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+			
+			options.setExperimentalOption("prefs", prefs);
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			
+			driver = new ChromeDriver(options);
 
 		} else if (browserList == BrowserList.H_CHROME) {
 			WebDriverManager.chromedriver().setup();
@@ -174,22 +198,22 @@ public class BaseTest {
 	public WebDriver getDriverInstance() {
 		return this.driver;
 	}
-	
-	protected String getEnvironmentUrl (String serverName) {
+
+	protected String getEnvironmentUrl(String serverName) {
 		String envUrl = null;
 		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
 		if (environment == EnviromentList.DEV) {
-			envUrl = "https://demo.nopcommerce.com/";			
+			envUrl = "https://demo.nopcommerce.com/";
 		} else if (environment == EnviromentList.TESSTING) {
-			envUrl = "https://demo.nopcommerce.com/";			
+			envUrl = "https://demo.nopcommerce.com/";
 		} else if (environment == EnviromentList.STAGING) {
-			envUrl = "";			
+			envUrl = "";
 		} else if (environment == EnviromentList.PRODUCTION) {
-			envUrl = "";		
-		} 
+			envUrl = "";
+		}
 		return envUrl;
 	}
-	
+
 	protected int generateFakeNumber() {
 		Random rand = new Random();
 		return rand.nextInt(99999);
@@ -225,7 +249,7 @@ public class BaseTest {
 		}
 		return pass;
 	}
-	
+
 	protected boolean verifyEquals(Object actual, Object expected) {
 		boolean pass = true;
 		try {
@@ -233,7 +257,7 @@ public class BaseTest {
 			log.info(" -------------------------- PASSED -------------------------- ");
 		} catch (Throwable e) {
 			log.info(" -------------------------- FAILED -------------------------- ");
-			pass = false;		
+			pass = false;
 			VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);
 			Reporter.getCurrentTestResult().setThrowable(e);
 		}
@@ -332,6 +356,17 @@ public class BaseTest {
 	}
 
 	protected String getCurrentDay() {
-		return  getCurrentDate() + "/" + getCurrentMonth() + "/" + getCurrentYear();
+		return getCurrentDate() + "/" + getCurrentMonth() + "/" + getCurrentYear();
+	}
+
+	protected void showBrowserConsoleLogs(WebDriver driver) {
+		if (driver.toString().contains("chrome")) {
+			LogEntries logs = driver.manage().logs().get("browser");
+			List<LogEntry> logList = logs.getAll();
+			for (LogEntry logging : logList) {
+				log.info("--------------" + logging.getLevel().toString() + "--------------------- \n"
+						+ logging.getMessage());
+			}
+		}
 	}
 }

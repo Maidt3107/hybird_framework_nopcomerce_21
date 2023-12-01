@@ -13,7 +13,7 @@
 <parameter name = "environmentName" value="DEV"/>
 
   <test name="Run on  CHROME ">
-  <parameter name = "browser" value="CHROME"/>
+  <parameter name = "browser" value="CHROME"/> 
     <classes>
     <!-- Trigger Common Register run firts-->
       <class name="com.nopcommerce.user.Level_18_Pattern_Object"/>
