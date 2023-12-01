@@ -24,6 +24,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
@@ -49,10 +50,11 @@ public class BaseTest {
 		if (browserList == BrowserList.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--disable-notifications");
-			options.addArguments("--disable-geolocation");
-			options.addPreference("intl.accept_languages", "vi-vn, vi, en-us, en");
 			driver = new FirefoxDriver(options);
+
+		} else if (browserList == BrowserList.SAFARI) {
+			WebDriverManager.safaridriver().setup();
+			driver = new SafariDriver();
 
 		} else if (browserList == BrowserList.H_FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -64,18 +66,6 @@ public class BaseTest {
 		} else if (browserList == BrowserList.CHROME) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
-			
-			Map<String, Object> prefs = new HashMap<String, Object>();
-			
-			prefs.put("profile.default_content_settings.popups", 0);
-			prefs.put("download.default_directory", GlobalConstants.PROJECT_PATH + "\\downloadFiles");
-			prefs.put("credentials_enable_service", false);
-			prefs.put("profile.password_manager_enabled", false);
-			
-			options.setExperimentalOption("prefs", prefs);
-			options.setExperimentalOption("useAutomationExtension", false);
-			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			
 			driver = new ChromeDriver(options);
 
 		} else if (browserList == BrowserList.H_CHROME) {

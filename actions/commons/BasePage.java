@@ -178,12 +178,22 @@ public class BasePage {
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType) {
-		this.getWebElemet(driver, locatorType).click();
+		if(driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, locatorType);
+			sleepInSecond(3);
+		}else {
+			this.getWebElemet(driver, locatorType).click();
+		}
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType, String... dynamicValues) {
 		locatorType = getDynamicXpath(locatorType, dynamicValues);
-		this.getWebElemet(driver, locatorType).click();
+		if(driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, locatorType);
+			sleepInSecond(3);
+		}else {
+			this.getWebElemet(driver, locatorType).click();
+		}
 	}
 
 	public int getListElementSize(WebDriver driver, String locator) {

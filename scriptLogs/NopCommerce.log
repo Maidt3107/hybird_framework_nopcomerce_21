@@ -493,3 +493,97 @@
 [2023-11-24 14:54:08,636 INFO com.nopcommerce.user.Level_14_Log_ReportNG] - Login - Step 06: Navigate to 'My Account' page
 [2023-11-24 14:54:09,167 INFO com.nopcommerce.user.Level_14_Log_ReportNG] - Login - Step 07: Verify  'Customer Infor' page is displayed
 [2023-11-24 14:54:09,259 INFO com.nopcommerce.user.Level_14_Log_ReportNG] -  -------------------------- FAILED -------------------------- 
+[2023-12-01 10:36:21,667 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 10:36:21,687 INFO com.nopcommerce.user.Level_18_Pattern_Object] - 
+[2023-12-01 10:37:12,866 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-12-01 10:37:15,049 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-12-01 10:37:15,298 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-12-01 10:37:16,297 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc79229@mail.vn'
+[2023-12-01 10:37:16,570 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-12-01 10:37:16,758 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-12-01 10:37:16,945 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-12-01 10:37:58,433 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-12-01 10:37:59,950 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc79229@mail.vn'
+[2023-12-01 10:38:00,189 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc79229@mail.vn'
+[2023-12-01 10:38:00,396 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-12-01 10:38:00,838 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-12-01 10:38:41,560 INFO com.nopcommerce.user.Level_18_Pattern_Object] - My Account - Step 01: Navigate to 'My Account' page
+[2023-12-01 10:39:11,643 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 10:39:11,644 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (14826ec527a0370f065edfd80d20e178)
+[2023-12-01 10:39:11,649 INFO com.nopcommerce.user.Level_18_Pattern_Object] - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-LF7N452', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63159}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 14826ec527a0370f065edfd80d20e178
+[2023-12-01 10:41:56,364 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-12-01 10:41:57,695 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-12-01 10:41:57,939 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-12-01 10:41:58,803 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc63391@mail.vn'
+[2023-12-01 10:41:59,098 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-12-01 10:41:59,304 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-12-01 10:41:59,455 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-12-01 10:42:36,057 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-12-01 10:43:06,195 INFO com.nopcommerce.user.Level_18_Pattern_Object] - My Account - Step 01: Navigate to 'My Account' page
+[2023-12-01 10:43:36,414 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 10:43:36,414 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (ce3ae9f13d1703c672faa849499c0a5d)
+[2023-12-01 10:43:36,418 INFO com.nopcommerce.user.Level_18_Pattern_Object] - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.199)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-LF7N452', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\DELL\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63271}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ce3ae9f13d1703c672faa849499c0a5d
+[2023-12-01 10:47:01,586 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-12-01 10:47:03,214 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-12-01 10:47:03,476 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-12-01 10:47:04,438 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc18663@mail.vn'
+[2023-12-01 10:47:04,822 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-12-01 10:47:05,026 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-12-01 10:47:05,267 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-12-01 10:47:46,916 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-12-01 10:47:48,370 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc18663@mail.vn'
+[2023-12-01 10:47:48,602 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc18663@mail.vn'
+[2023-12-01 10:47:48,815 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-12-01 10:47:49,289 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-12-01 10:48:29,953 INFO com.nopcommerce.user.Level_18_Pattern_Object] - My Account - Step 01: Navigate to 'My Account' page
+[2023-12-01 10:49:10,598 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 10:49:10,599 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (3100d8dd6dd252f6861739c1b525f892)
+[2023-12-01 11:49:38,280 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 01: Navigate to 'Register' page
+[2023-12-01 11:49:40,061 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 02: Enter to Firstname textbox with value is 'Automation'
+[2023-12-01 11:49:40,362 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 03: Enter to LastName textbox with value is 'FC'
+[2023-12-01 11:49:41,361 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 04: Enter to Email textbox with value is 'afc60186@mail.vn'
+[2023-12-01 11:49:41,749 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 05: Enter to Password textbox with value is '123456'
+[2023-12-01 11:49:41,983 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 06: Enter to Confirm Password textbox with value is '123456'
+[2023-12-01 11:49:42,216 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Register - Step 07: Click to 'Register' button
+[2023-12-01 11:50:23,746 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 01: Navigate to Logout page
+[2023-12-01 11:50:25,324 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 02: Enter to Email textbox with value is 'afc60186@mail.vn'
+[2023-12-01 11:50:25,559 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 03: Enter to Password textbox with value is 'afc60186@mail.vn'
+[2023-12-01 11:50:25,778 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 04: Click to Logout link
+[2023-12-01 11:50:26,742 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Login - Step 05: Verify 'My Account' link displayed
+[2023-12-01 11:51:07,360 INFO com.nopcommerce.user.Level_18_Pattern_Object] - My Account - Step 01: Navigate to 'My Account' page
+[2023-12-01 11:51:48,001 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 11:51:48,002 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = chromedriver: chrome on windows (867e17746a0e514f16c1a8e71dd65b1e)
+[2023-12-01 16:45:11,131 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 16:45:11,132 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = internetexplorerdriver: internet explorer on windows (1dbdda66-8453-4bd4-8892-b7c2619b5eea)
+[2023-12-01 16:45:16,089 INFO com.nopcommerce.user.Level_18_Pattern_Object] - java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:16928
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-LF7N452', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: RemoteWebDriver
+[2023-12-01 17:06:10,037 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 17:06:10,039 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = internetexplorerdriver: internet explorer on windows (c0645916-8bcb-4126-813d-dd03abc5b9fb)
+[2023-12-01 17:06:15,261 INFO com.nopcommerce.user.Level_18_Pattern_Object] - java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:24750
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-LF7N452', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: RemoteWebDriver
+[2023-12-01 17:06:19,769 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 17:06:19,770 INFO com.nopcommerce.user.Level_18_Pattern_Object] - Driver instance name = internetexplorerdriver: internet explorer on windows (f58c3194-35f1-4cdb-93c9-dd9525986d66)
+[2023-12-01 17:06:23,887 INFO com.nopcommerce.user.Level_18_Pattern_Object] - java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:13809
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'DESKTOP-LF7N452', ip: '192.168.1.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: driver.version: RemoteWebDriver
+[2023-12-01 17:50:00,459 INFO com.nopcommerce.user.Level_18_Pattern_Object] - OS name = windows 10
+[2023-12-01 17:50:00,460 INFO com.nopcommerce.user.Level_18_Pattern_Object] - 
