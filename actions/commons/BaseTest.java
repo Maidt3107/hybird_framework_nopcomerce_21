@@ -181,7 +181,7 @@ public class BaseTest {
 		}
 
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(appUrl);
+		driver.get(getEnvironmentUrl(appUrl));
 		return driver;
 	}
 
@@ -189,17 +189,30 @@ public class BaseTest {
 		return this.driver;
 	}
 
-	protected String getEnvironmentUrl(String serverName) {
+	protected String getEnvironmentUrl(String environmentName) {
 		String envUrl = null;
-		EnviromentList environment = EnviromentList.valueOf(serverName.toUpperCase());
-		if (environment == EnviromentList.DEV) {
+		EnviromentList environment = EnviromentList.valueOf(environmentName.toUpperCase());
+		
+		switch (environment) {
+		case DEV:
 			envUrl = "https://demo.nopcommerce.com/";
-		} else if (environment == EnviromentList.TESSTING) {
-			envUrl = "https://demo.nopcommerce.com/";
-		} else if (environment == EnviromentList.STAGING) {
-			envUrl = "";
-		} else if (environment == EnviromentList.PRODUCTION) {
-			envUrl = "";
+			break;
+		case TESSTING:
+			envUrl = "https://testing.nopcommerce.com/";
+			break;
+		case STAGING:
+			envUrl = "https://staging.nopcommerce.com/";
+			break;
+		case PRE_PROD:
+			envUrl = "https://pre-prod.nopcommerce.com/";
+			break;
+		case PROD:
+			envUrl = "https://prod.nopcommerce.com/";
+			break;
+
+		default:
+			envUrl = null;
+			break;
 		}
 		return envUrl;
 	}
